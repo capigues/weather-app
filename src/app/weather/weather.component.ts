@@ -11,7 +11,8 @@ export class WeatherComponent implements OnInit {
 
   // Input and Output
   public weatherDetails;
-  @Input() userLocation;
+  public showWeather = false;
+  @Input() location;
   @Output() childEvent = new EventEmitter();
 
 
@@ -22,10 +23,16 @@ export class WeatherComponent implements OnInit {
 
   // Outputting location to app.component via (childEvent) in app.component
   sendLocation(location) {
-    this.childEvent.emit(location);
-    this.__weatherService.getWeatherDetails(location).subscribe(data => {
+    if (location === '') {
+      alert('Enter a city to get the temperature');
+      this.showWeather = false;
+    } else {
+      this.childEvent.emit(location);
+      this.__weatherService.getWeatherDetails(location).subscribe(data => {
       this.weatherDetails = data;
-    });
+      this.showWeather = true;
+      });
+    }
   }
 
 }

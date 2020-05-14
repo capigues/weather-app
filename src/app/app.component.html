@@ -2,4 +2,4 @@
   <h1>{{ title }} App</h1>
 </div>
 <!--Outputting the user location from 'weather.components' to 'app.components'-->
-<app-weather [userLocation]="userLocation" (childEvent)="userLocation=$event"></app-weather>
+<app-weather [location]="location" (childEvent)="location=$event"></app-weather>

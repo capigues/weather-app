@@ -4,7 +4,7 @@
         <input #location placeholder="Enter City">
         <button (click)="sendLocation(location.value)">Get Weather</button>
     </div>
-    <div>
-        {{ this.weatherDetails.current.temp_f }}
-    </div>
+    <h2 *ngIf="showWeather">
+        It is {{ this.weatherDetails.current.temp_f }}˚F in {{ this.weatherDetails.location.name }}, {{ this.weatherDetails.location.region }}.
+    </h2>
 </div>

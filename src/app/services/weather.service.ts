@@ -17,4 +17,4 @@ export class WeatherService {
   getWeatherDetails(location): Observable<IWeather[]> {
     return this.http.get<IWeather[]>(`${this._url}${location}`);
   }
-} 
+}
