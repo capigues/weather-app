@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <!--Getting user input and passing into sendLocation() function-->
+        <input #location placeholder="Enter City">
+        <button (click)="sendLocation(location.value)">Get Weather</button>
+    </div>
+    <div>
+        {{ this.weatherDetails.current.temp_f }}
+    </div>
+</div>

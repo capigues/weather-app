@@ -1,0 +1,26 @@
+div, input {
+    text-align: center;
+}
+div, button {
+	text-align: center;
+}
+button {
+    background-color: darkslateblue;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:8px 24px;
+	text-decoration:none;
+}
+button:hover {
+    background-color:#1e62d0;
+}
+input {
+    size: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 60px;
+}
