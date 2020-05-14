@@ -4,7 +4,21 @@
         <input #location placeholder="Enter City">
         <button (click)="sendLocation(location.value)">Get Weather</button>
     </div>
-    <h2 *ngIf="showWeather">
-        It is {{ this.weatherDetails.current.temp_f }}˚F in {{ this.weatherDetails.location.name }}, {{ this.weatherDetails.location.region }}.
-    </h2>
+    <div  *ngIf="showWeather">
+        <img src="{{ this.weatherDetails.current.condition.icon }}" />
+        <h2>
+            It is {{ this.weatherDetails.current.temp_f }}˚F in {{ this.weatherDetails.location.name }}, {{ this.weatherDetails.location.region }}.
+        </h2>
+        <h3>More Details</h3>
+        <div class="details">
+            <ul>
+                <li>Local Time: {{ this.weatherDetails.location.localtime | date: 'shortTime'}}</li>
+                <li>Feels Like: {{ this.weatherDetails.current.feelslike_f }}˚F</li>
+                <li>Humidity: {{ this.weatherDetails.current.humidity }}%</li>
+                <li>Visibility: {{ this.weatherDetails.current.vis_miles }} miles</li>
+                <li>Wind Speed: {{ this.weatherDetails.current.wind_mph }} mph</li>
+            </ul>
+        </div>
+        
+    </div>
 </div>

@@ -11,9 +11,13 @@ export interface IWeather {
     };
     current: {
         temp_f: number;
-        condition: {};
+        is_day: boolean;
+        condition: {
+            icon: string;
+        };
         wind_mph: number;
+        humidity: number;
         feelslike_f: number;
-        uv: number;
+        vis_miles: number;
     };
 }
